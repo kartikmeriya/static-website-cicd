@@ -1,0 +1,336 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    background: #222;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* Cart Badge Styles */
+.cart-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+#cart-count,
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -12px;
+    background: red;
+    padding: 4px 7px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+    line-height: 14px;
+    transition: transform 0.25s ease-in-out;
+}
+
+/* Bounce Animation class */
+.cart-count.animate {
+    transform: scale(1.3);
+}
+
+/* Gallery Section */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 artworks per row */
+    gap: 30px; /* spacing between artworks */
+    width: 90%;
+    margin: 40px auto;
+}
+
+@media (max-width: 1024px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.card-actions {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+}
+
+.add-to-cart {
+    background: #ff9800;
+    color: #fff;
+}
+
+.add-to-cart:hover {
+    background: #ffa726;
+}
+
+.buy-now {
+    background: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+}
+
+.buy-now:hover {
+    background: #3c8c40;
+}
+
+/* Cart Page Layout */
+.cart-section {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+#cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Cart Page Item Styling */
+.cart-card {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    margin-bottom: 15px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+    gap: 15px;
+}
+
+.cart-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cart-card h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart-card .price {
+    color: #008000;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.remove-btn {
+    background: #d90000;
+    padding: 7px 12px;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.remove-btn:hover {
+    background: #b30000;
+}
+
+
+#total {
+    text-align: right;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* C*
+
+/* Home Page Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                url("images/hero-art.jpg") center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 110px 20px;
+    border-bottom: 5px solid #ffcc00;
+}
+
+.hero h2 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Featured Artwork Section */
+.featured-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: #fafafa;
+}
+
+.featured-section h2 {
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+.featured-card {
+    width: 260px;
+    margin: auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.12);
+    padding: 12px;
+}
+
+.featured-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+
+/* Contact Page */
+.contact-section {
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    margin-top: 40px;
+}
+
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ffcc00;
+}
+
+.contact-btn {
+    background: #222;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-btn:hover {
+    background: #ffcc00;
+    color: #000;
+}
+
+/* Social Media Icons */
+.social-links {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-links a {
+    margin: 0 10px;
+    font-size: 22px;
+    color: #222;
+}
+
+.social-links a:hover {
+    color: #ff9800;
+}
+
+
