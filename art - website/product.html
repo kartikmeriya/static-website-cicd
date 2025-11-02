@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product Preview</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="product-container">
+  <img id="product-img" src="" alt="Artwork">
+  <div class="details">
+    <h2 id="product-name"></h2>
+    <p id="product-price"></p>
+    <button onclick="addToCart()" class="btn">Add to Cart</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+const products = [
+  {id: 1, name: "Modern Abstract Art", price: "₹2,499", img: "images/art1.jpg"},
+  {id: 2, name: "Nature Canvas", price: "₹3,000", img: "images/art2.jpg"},
+  {id: 3, name: "Floral Painting", price: "₹2,800", img: "images/art3.jpg"}
+];
+
+// Get Product ID from URL
+const urlParams = new URLSearchParams(window.location.search);
+const productID = parseInt(urlParams.get("id"));
+const product = products.find(p => p.id === productID);
+
+// Insert Data
+document.getElementById("product-img").src = product.img;
+document.getElementById("product-name").innerHTML = product.name;
+document.getElementById("product-price").innerHTML = product.price;
+
+function addToCart() {
+  showToast("Item added to cart!");
+}
+
+// Toast Notification
+function showToast(message) {
+  let toast = document.getElementById("toast");
+  toast.className = "show";
+  toast.innerHTML = message;
+  setTimeout(() => toast.className = toast.className.replace("show",""), 3000);
+}
+</script>
+
+</body>
+</html>
